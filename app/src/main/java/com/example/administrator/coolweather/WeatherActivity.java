@@ -70,6 +70,7 @@ public class WeatherActivity extends AppCompatActivity {
         pm25Text=(TextView)findViewById(R.id.pm25_text);
         comfortText=(TextView)findViewById(R.id.comfort_text);
         sportText=(TextView)findViewById(R.id.sport_text);
+        carWashText=(TextView)findViewById(R.id.car_wash_text);
         bingPicImg=(ImageView)findViewById(R.id.bing_pic_img);
         swipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
@@ -107,8 +108,7 @@ public class WeatherActivity extends AppCompatActivity {
         });
     }
     public void requestWeather(final String weatherId){
-        String weatherUrl="https://free-api.heweather/s6/weather?location="+weatherId
-                +"&key=HE1903101847021553";
+        String weatherUrl="http://guolin.tech/api/weather?cityid="+weatherId +"&key=c1c3ad670a124f8f883ac41515318add";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
